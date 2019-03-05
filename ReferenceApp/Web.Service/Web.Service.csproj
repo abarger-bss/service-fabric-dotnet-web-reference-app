@@ -4,9 +4,15 @@
     <TargetFramework>net452</TargetFramework>
     <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
     <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
 
@@ -28,7 +34,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
     <PackageReference Include="Microsoft.ServiceFabric" Version="5.6.204" />
     <PackageReference Include="Microsoft.ServiceFabric.Actors" Version="2.6.204" />
-    <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.WebListener" Version="2.5.216" />
+    <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.WebListener" Version="2.6.204" />
     <PackageReference Include="Microsoft.ServiceFabric.Data" Version="2.6.204" />
     <PackageReference Include="Microsoft.ServiceFabric.Services" Version="2.6.204" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />

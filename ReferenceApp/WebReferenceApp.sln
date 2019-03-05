@@ -40,7 +40,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mocks", "Mocks\Mocks.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerOrder.UnitTests", "CustomerOrder.UnitTests\CustomerOrder.UnitTests.csproj", "{226B8D34-99CF-4172-87DC-E20B39030CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Service", "Web.Service\Web.Service.csproj", "{EB1D3837-C58C-4F47-8B64-938E6013E8EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Service", "Web.Service\Web.Service.csproj", "{EB1D3837-C58C-4F47-8B64-938E6013E8EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,12 +102,15 @@ Global
 		{226B8D34-99CF-4172-87DC-E20B39030CC0}.Debug|x64.Build.0 = Debug|x64
 		{226B8D34-99CF-4172-87DC-E20B39030CC0}.Release|x64.ActiveCfg = Release|x64
 		{226B8D34-99CF-4172-87DC-E20B39030CC0}.Release|x64.Build.0 = Release|x64
-		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Debug|x64.Build.0 = Debug|Any CPU
-		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Release|x64.ActiveCfg = Release|Any CPU
-		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Release|x64.Build.0 = Release|Any CPU
+		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Debug|x64.ActiveCfg = Debug|x64
+		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Debug|x64.Build.0 = Debug|x64
+		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Release|x64.ActiveCfg = Release|x64
+		{EB1D3837-C58C-4F47-8B64-938E6013E8EB}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34D1A42D-47A5-485A-AEA9-891261700C21}
 	EndGlobalSection
 EndGlobal
