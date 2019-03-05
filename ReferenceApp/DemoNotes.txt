@@ -1,0 +1,40 @@
+Demo Notes For Wednesday
+========================
+
+Go through downloading nuget to a local directory
+
+- cd to ~\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp
+
+- new-item -itemtype Directory tools
+
+- Download nuget. Use .Net web client for speed
+
+$url = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+$outFile = Resolve-Path .\tools | Join-Path "nuget.exe"  # comment on this
+$wc = [System.Net.WebClient]::new()
+$wc.DownloadFile($url, $outFile)
+
+
+- Restore packages:
+
+.\tools\nuget.exe restore .\WebReferenceApplication\packages.config -PackagesDirectory .\packages\
+
+- fix busted build:
+    - Web.Service has duplicate Content items
+    - Add <EnableDefaultContentItems>false</EnableDefaultContentItems> element to Web.Service csproj
+    - Update Microsoft.ServiceFabric.AspNetCore.WebListener to 2.6.204
+    
+- 
+
+- Package service fabric app. Note we had to add ForcePackageTarget manually as a
+  property so we could package the SF app while building the sln. Sln does not have a package target.
+  Cannot target *.sfproj directly with MSBuild b/c it results in errors claiming invalid configuration.
+  Added the following element to WebReferenceApplication under <Project>:
+  
+  <Target Name="ForcePackageTarget" AfterTargets="Build" Condition="'$(ForcePackageTarget)' =='true'">
+    <CallTarget Targets="Package"/>
+  </Target>
+
+ Run MSBuild: 
+ 
+msbuild .\WebReferenceApp.sln /target:build /verbosity:normal /toolsversion:15.0 /p:Platform=x64 /p:Configuration=Debug /p:ForcePackageTarget=true
