@@ -1,6 +1,9 @@
 Demo Notes For Wednesday
 ========================
 
+Restore Packages
+----------------
+
 Go through downloading nuget to a local directory
 
 - cd to ~\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp
@@ -19,12 +22,17 @@ $wc.DownloadFile($url, $outFile)
 
 .\tools\nuget.exe restore .\WebReferenceApplication\packages.config -PackagesDirectory .\packages\
 
+
+Build And Package an SF App
+---------------------------
+
 - fix busted build:
     - Web.Service has duplicate Content items
-    - Add <EnableDefaultContentItems>false</EnableDefaultContentItems> element to Web.Service csproj
+    - Remove "duplicate" content item for angluar index.js
     - Update Microsoft.ServiceFabric.AspNetCore.WebListener to 2.6.204
+    - Change build action copy to output directory to copy if newer for Web.Service appsettings.json
     
-- 
+- Restore bower packages in Web.Service (run bower install at command line)
 
 - Package service fabric app. Note we had to add ForcePackageTarget manually as a
   property so we could package the SF app while building the sln. Sln does not have a package target.
@@ -38,3 +46,13 @@ $wc.DownloadFile($url, $outFile)
  Run MSBuild: 
  
 msbuild .\WebReferenceApp.sln /target:build /verbosity:normal /toolsversion:15.0 /p:Platform=x64 /p:Configuration=Debug /p:ForcePackageTarget=true
+
+
+Deploy an SF App using Powershell
+---------------------------------
+
+- Show Deploy-BastianApplication script
+    - Ensure default services get deleted from applicationManifest
+    - Removed extensions from actor service manifests - these appeared to be updating application manifest with default services on build. Not ideal.
+    - Set UpdateServiceFabricManifestEnabled element to false in csproj for actor services
+    

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions;ValidateProjects">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore')" />
+  <Import Project="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\before.WebReferenceApp.sln.targets" Condition="exists('C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\before.WebReferenceApp.sln.targets')" />
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == '' ">
+    <Platform>x64</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(AspNetConfiguration)' == '') ">
+    <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SolutionDir>C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>WebReferenceApp.sln</SolutionFileName>
+    <SolutionName>WebReferenceApp</SolutionName>
+    <SolutionPath>C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\WebReferenceApp.sln</SolutionPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and ('$(MSBuildToolsVersion)' == '3.5' or '$(MSBuildToolsVersion)' == '3.0')">v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and !('$(MSBuildToolsVersion)' == '3.5' or '$(MSBuildToolsVersion)' == '3.0' or '$(MSBuildToolsVersion)' == '2.0')">v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'x64') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{0EE37B65-FCCB-44AE-B4F7-AED85FDEB072}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\WebReferenceApplication\WebReferenceApplication.sfproj" BuildProjectInSolution="True">Debug|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /><ProjectDependency Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" /><ProjectDependency Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{5F0C7805-C91D-47E9-AEDE-946CADEA1C8F}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Actor\CustomerOrder.Actor.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Domain\CustomerOrder.Domain.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4C5ACF3B-E6D1-4FBD-8B23-A9FA7BA6326E}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Actor\RestockRequest.Actor.csproj" BuildProjectInSolution="True">Debug|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Domain\RestockRequest.Domain.csproj" BuildProjectInSolution="True">Debug|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{714B1C61-FFA8-4A5E-8DD2-D0A290677293}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Service\Inventory.Service.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7C404BC4-7589-488C-AB09-876E5B33B641}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Service\RestockRequestManager.Service.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Common\Common.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4162F266-D657-4143-AA62-626C10D23561}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Domain\RestockRequestManager.Domain.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7E9C2DFD-71A5-496D-AA4D-5EC53EAEB9AE}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Domain\Inventory.Domain.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{71E58E09-BEE4-4B19-BCF7-4C9BD71514FB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.UnitTests\Inventory.UnitTests.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{00E00484-BD00-40CD-B2CC-1CFA8E893972}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Mocks\Mocks.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{226B8D34-99CF-4172-87DC-E20B39030CC0}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.UnitTests\CustomerOrder.UnitTests.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{EB1D3837-C58C-4F47-8B64-938E6013E8EB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Web.Service\Web.Service.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <ItemGroup>
+    <SolutionConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+      <Content>
+        <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{0EE37B65-FCCB-44AE-B4F7-AED85FDEB072}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\WebReferenceApplication\WebReferenceApplication.sfproj" BuildProjectInSolution="True">Debug|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /><ProjectDependency Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" /><ProjectDependency Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{5F0C7805-C91D-47E9-AEDE-946CADEA1C8F}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Actor\CustomerOrder.Actor.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Domain\CustomerOrder.Domain.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4C5ACF3B-E6D1-4FBD-8B23-A9FA7BA6326E}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Actor\RestockRequest.Actor.csproj" BuildProjectInSolution="True">Debug|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Domain\RestockRequest.Domain.csproj" BuildProjectInSolution="True">Debug|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{714B1C61-FFA8-4A5E-8DD2-D0A290677293}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Service\Inventory.Service.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7C404BC4-7589-488C-AB09-876E5B33B641}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Service\RestockRequestManager.Service.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Common\Common.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4162F266-D657-4143-AA62-626C10D23561}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Domain\RestockRequestManager.Domain.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7E9C2DFD-71A5-496D-AA4D-5EC53EAEB9AE}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Domain\Inventory.Domain.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{71E58E09-BEE4-4B19-BCF7-4C9BD71514FB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.UnitTests\Inventory.UnitTests.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{00E00484-BD00-40CD-B2CC-1CFA8E893972}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Mocks\Mocks.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{226B8D34-99CF-4172-87DC-E20B39030CC0}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.UnitTests\CustomerOrder.UnitTests.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{EB1D3837-C58C-4F47-8B64-938E6013E8EB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Web.Service\Web.Service.csproj" BuildProjectInSolution="True">Debug|x64</ProjectConfiguration>
+</SolutionConfiguration>
+      </Content>
+    </SolutionConfiguration>
+    <SolutionConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+      <Content>
+        <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{0EE37B65-FCCB-44AE-B4F7-AED85FDEB072}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\WebReferenceApplication\WebReferenceApplication.sfproj" BuildProjectInSolution="True">Release|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /><ProjectDependency Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" /><ProjectDependency Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{5F0C7805-C91D-47E9-AEDE-946CADEA1C8F}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Actor\CustomerOrder.Actor.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Domain\CustomerOrder.Domain.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4C5ACF3B-E6D1-4FBD-8B23-A9FA7BA6326E}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Actor\RestockRequest.Actor.csproj" BuildProjectInSolution="True">Release|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Domain\RestockRequest.Domain.csproj" BuildProjectInSolution="True">Release|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{714B1C61-FFA8-4A5E-8DD2-D0A290677293}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Service\Inventory.Service.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7C404BC4-7589-488C-AB09-876E5B33B641}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Service\RestockRequestManager.Service.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Common\Common.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4162F266-D657-4143-AA62-626C10D23561}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Domain\RestockRequestManager.Domain.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7E9C2DFD-71A5-496D-AA4D-5EC53EAEB9AE}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Domain\Inventory.Domain.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{71E58E09-BEE4-4B19-BCF7-4C9BD71514FB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.UnitTests\Inventory.UnitTests.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{00E00484-BD00-40CD-B2CC-1CFA8E893972}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Mocks\Mocks.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{226B8D34-99CF-4172-87DC-E20B39030CC0}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.UnitTests\CustomerOrder.UnitTests.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{EB1D3837-C58C-4F47-8B64-938E6013E8EB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Web.Service\Web.Service.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+</SolutionConfiguration>
+      </Content>
+    </SolutionConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'x64') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{0EE37B65-FCCB-44AE-B4F7-AED85FDEB072}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\WebReferenceApplication\WebReferenceApplication.sfproj" BuildProjectInSolution="True">Release|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /><ProjectDependency Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" /><ProjectDependency Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{5F0C7805-C91D-47E9-AEDE-946CADEA1C8F}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Actor\CustomerOrder.Actor.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{1E7E813F-43D3-4D0B-8546-5E1023873F28}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.Domain\CustomerOrder.Domain.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4C5ACF3B-E6D1-4FBD-8B23-A9FA7BA6326E}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Actor\RestockRequest.Actor.csproj" BuildProjectInSolution="True">Release|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{A44FC2C5-6781-447E-80F5-7265B960B36A}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequest.Domain\RestockRequest.Domain.csproj" BuildProjectInSolution="True">Release|x64<ProjectDependency Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" /></ProjectConfiguration>
+  <ProjectConfiguration Project="{714B1C61-FFA8-4A5E-8DD2-D0A290677293}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Service\Inventory.Service.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7C404BC4-7589-488C-AB09-876E5B33B641}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Service\RestockRequestManager.Service.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{9EC0063F-489E-43FE-94B5-BF5F89977CD3}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Common\Common.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{4162F266-D657-4143-AA62-626C10D23561}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\RestockRequestManager.Domain\RestockRequestManager.Domain.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{7E9C2DFD-71A5-496D-AA4D-5EC53EAEB9AE}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.Domain\Inventory.Domain.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{71E58E09-BEE4-4B19-BCF7-4C9BD71514FB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Inventory.UnitTests\Inventory.UnitTests.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{00E00484-BD00-40CD-B2CC-1CFA8E893972}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Mocks\Mocks.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{226B8D34-99CF-4172-87DC-E20B39030CC0}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\CustomerOrder.UnitTests\CustomerOrder.UnitTests.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+  <ProjectConfiguration Project="{EB1D3837-C58C-4F47-8B64-938E6013E8EB}" AbsolutePath="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\Web.Service\Web.Service.csproj" BuildProjectInSolution="True">Release|x64</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter')" />
+  <Import Project="C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\after.WebReferenceApp.sln.targets" Condition="exists('C:\dev\sf-samples\service-fabric-dotnet-web-reference-app\ReferenceApp\after.WebReferenceApp.sln.targets')" />
+  <Target Name="Rebuild" />
+  <Target Name="Build" />
+  <Target Name="Clean" />
+  <Target Name="Publish" />
+</Project>

@@ -4,7 +4,7 @@
     <TargetFramework>net452</TargetFramework>
     <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
     <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
-    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <EnableDefaultContentItems>true</EnableDefaultContentItems>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
@@ -22,10 +22,7 @@
     <EmbeddedResource Remove="wwwroot\lib\bootstrap\**" />
     <None Remove="wwwroot\lib\bootstrap\**" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="wwwroot\js\angular-index.js" />
-  </ItemGroup>
+ 
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
@@ -46,6 +43,11 @@
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\CustomerOrder.Domain\CustomerOrder.Domain.csproj" />
     <ProjectReference Include="..\Inventory.Domain\Inventory.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
