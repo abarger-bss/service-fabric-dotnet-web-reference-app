@@ -22,6 +22,8 @@
   <ItemGroup>
     <None Include="Scripts\Deploy-BastianApplication.ps1" />
     <None Include="Scripts\Deploy-FabricApplication.ps1" />
+    <None Include="Scripts\Package-BastianServiceFabricApplication.ps1" />
+    <None Include="Scripts\Remove-BastianServiceFabricApplication.ps1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomerOrder.Actor\CustomerOrder.Actor.csproj" />
@@ -46,12 +48,12 @@
     <ApplicationProjectTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Service Fabric Tools\Microsoft.VisualStudio.Azure.Fabric.ApplicationProject.targets</ApplicationProjectTargetsPath>
   </PropertyGroup>
   <Import Project="$(ApplicationProjectTargetsPath)" Condition="Exists('$(ApplicationProjectTargetsPath)')" />
+  <Target Name="ForcePackageTarget" AfterTargets="Build" Condition="'$(ForcePackageTarget)' =='true'">
+    <CallTarget Targets="Package" />
+  </Target>
   <Import Project="..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.7\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.7\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" />
   <Target Name="ValidateMSBuildFiles">
     <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.7\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" Text="Unable to find the '..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.7\build\Microsoft.VisualStudio.Azure.Fabric.Application.props' file. Please restore the 'Microsoft.VisualStudio.Azure.Fabric.MSBuild' Nuget package." />
     <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.7\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" Text="Unable to find the '..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.7\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets' file. Please restore the 'Microsoft.VisualStudio.Azure.Fabric.MSBuild' Nuget package." />
-  </Target>
-  <Target Name="ForcePackageTarget" AfterTargets="Build" Condition="'$(ForcePackageTarget)' =='true'">
-    <CallTarget Targets="Package" />
   </Target>
 </Project>
